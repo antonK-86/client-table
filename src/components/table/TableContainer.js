@@ -1,5 +1,5 @@
-import React from "react";
-import useSortableData from "../hook/useSortableData";
+import React, { useState } from "react";
+import Pagination from "../pagination/Pagination";
 import Table from "./Table";
 
 const data = [
@@ -30,14 +30,71 @@ const data = [
         name:'Четвертый',
         count:17,
         distance:230
-    }
+    },
+    {
+        id:35298,
+        date:'10/03/2021',
+        name:'Пятый',
+        count:23,
+        distance:150
+    },
+    {
+        id:45785,
+        date:'04/04/2021',
+        name:'Шестой',
+        count:54,
+        distance:500
+    },
+    {
+        id:12987,
+        date:'13/11/2020',
+        name:'Седьмой',
+        count:30,
+        distance:80
+    },
+    {
+        id:45434,
+        date:'14/12/2020',
+        name:'Восьмой',
+        count:17,
+        distance:230
+    },
+    {
+        id:84752,
+        date:'21/02/2021',
+        name:'Девятый',
+        count:20,
+        distance:210
+    },
+    {
+        id:36985,
+        date:'25/03/2021',
+        name:'Десятый',
+        count:62,
+        distance:900
+    },
 ]
 
 const TableContainer = ()=>{
-    const { sortedItems, requestSort } = useSortableData(data);
+    const [activePage,setActivePage] = useState(1) //номер активной страницы
+  
+    const allItemsCount = data.length; //общее кол-во элементов
+    const onPageItemsCount = 3; //кол-во элементов на странице
+    const pagesCount = Math.ceil(allItemsCount/onPageItemsCount) 
+    const start = activePage - 1
+
+    const dataElements = data.filter((item,index)=>{
+        if(index < onPageItemsCount*activePage && index>=onPageItemsCount*start) return item
+        return null
+      }) //список выводимых элементов
+  
+    const changePageHandler = (page)=>{
+      setActivePage(page);
+    }
     return (
         <div>
-            <Table title="Таблица данных Welbex" sortedItems={sortedItems} requestSort={requestSort}/>
+            <Table title="Таблица данных Welbex" data={dataElements} changePageHandler={changePageHandler}/>
+            <Pagination pagesCount={pagesCount} changePageHandler={changePageHandler} activePage={activePage}/>
         </div>
     )
 }

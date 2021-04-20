@@ -1,0 +1,25 @@
+.pagination__container {
+    display: flex;
+}
+
+.pagination__container_item{
+    width: 40px;
+    height: 40px;
+    background-color: burlywood;
+    color: rgb(78, 78, 102);
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 40px;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.pagination__container_item:hover{
+    background-color: rgb(78, 78, 102);
+    color:burlywood
+}
+
+.activePage{
+    background-color: rgb(78, 78, 102);
+    color:burlywood
+}
