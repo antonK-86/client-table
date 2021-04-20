@@ -1,0 +1,17 @@
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: cornsilk;
+}
+
+.filter-container__item{
+    display: flex;
+    justify-content: space-around;
+}
+
+.filter-container__item_btn{
+   width: 100%;
+   margin-top: 5px;
+   padding-left: 40px;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FilterContainer from "../filtration/FilterContainer";
 import Pagination from "../pagination/Pagination";
 import TableContent from "./TableContent";
 
@@ -94,7 +95,9 @@ const TableContainer = ()=>{
     return (
         <div className="container">
             <TableContent title="Таблица данных Welbex" data={dataElements} changePageHandler={changePageHandler}/>
+            <FilterContainer/>
             <Pagination pagesCount={pagesCount} changePageHandler={changePageHandler} activePage={activePage}/>
+            
         </div>
     )
 }
