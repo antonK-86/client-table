@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Pagination from "../pagination/Pagination";
-import Table from "./Table";
+import TableContent from "./TableContent";
 
 const data = [
     {
@@ -80,7 +80,7 @@ const TableContainer = ()=>{
   
     const allItemsCount = data.length; //общее кол-во элементов
     const onPageItemsCount = 3; //кол-во элементов на странице
-    const pagesCount = Math.ceil(allItemsCount/onPageItemsCount) 
+    const pagesCount = Math.ceil(allItemsCount/onPageItemsCount) //общее кол-во страниц
     const start = activePage - 1
 
     const dataElements = data.filter((item,index)=>{
@@ -92,8 +92,8 @@ const TableContainer = ()=>{
       setActivePage(page);
     }
     return (
-        <div>
-            <Table title="Таблица данных Welbex" data={dataElements} changePageHandler={changePageHandler}/>
+        <div className="container">
+            <TableContent title="Таблица данных Welbex" data={dataElements} changePageHandler={changePageHandler}/>
             <Pagination pagesCount={pagesCount} changePageHandler={changePageHandler} activePage={activePage}/>
         </div>
     )

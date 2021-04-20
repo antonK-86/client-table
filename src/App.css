@@ -1,0 +1,19 @@
+.container {
+    width: 80%;
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+}
+
+caption {
+    text-align: center;
+    caption-side: top;
+}
+
+.pointer{
+    cursor: pointer;
+}

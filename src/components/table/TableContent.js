@@ -1,17 +1,18 @@
 import React from "react";
+import Table from 'react-bootstrap/Table'
 import useSortableData from "../hook/useSortableData";
 
-const Table = (props)=>{
+const TableContent = (props)=>{
     const { sortedItems, requestSort } = useSortableData(props.data);
     return (
-      <table>
+      <Table striped bordered hover size="sm">
         <caption>{props.title}</caption>
         <thead>
           <tr>
             <th>Дата</th>
-            <th  onClick={() => requestSort("name")}>Название</th>
-            <th  onClick={() => requestSort("count")}>Количество</th>
-            <th  onClick={() => requestSort("distance")}>Расстояние</th>
+            <th className="pointer" onClick={() => requestSort("name")}>Название</th>
+            <th className="pointer" onClick={() => requestSort("count")}>Количество</th>
+            <th className="pointer" onClick={() => requestSort("distance")}>Расстояние</th>
           </tr>
         </thead>
         <tbody>
@@ -24,8 +25,8 @@ const Table = (props)=>{
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     )
 }
 
-export default Table;
+export default TableContent;
