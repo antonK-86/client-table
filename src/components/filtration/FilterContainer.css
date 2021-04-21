@@ -1,26 +1,33 @@
 .filter-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.filter-container__item{
-    display: flex;
-    justify-content: start
+.filter-container__item {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.filter-input{
-    margin-left: 20px;
+.filter-input {
+  margin-left: 20px;
 }
 
-.dropdown-block{
-    padding: 5px 10px;
-    position: relative;
+.dropdown-block {
+  padding: 5px 10px;
+  position: relative;
 }
-  
-.filter-container__dropdown-container{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top:5px;
-    left:55px
+
+.filter-container__dropdown-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5px;
+  left: 55px;
+}
+
+.filter-container__item_selected {
+  margin-right: 10px;
+  background-color: rgba(34, 18, 18, 0.192);
+  padding: 5px 10px;
+  border-radius: 0.25rem;
 }

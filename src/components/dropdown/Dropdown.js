@@ -1,20 +1,26 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import Button from "../buttons/Button";
 import "./Dropdown.css";
 
-const Dropdown = ({ text, list, handleSelected }) => {
-  const [showElems, setShowElems] = useState(false);
-
-  const handleClick = () => {
-    setShowElems(!showElems);
-  };
-
- return (
+const Dropdown = ({ text, list, handleSelected, show, handleToShow }) => {
+  return (
     <div className="dropdown">
-      <Button handleClick={handleClick}>{text}</Button>  
-      <div className="dropdown__list">{showElems
-        ? list.map((i) => <Button handleClick={()=>handleSelected(i)}>{i}</Button> )
-        : null}</div>
+      <Button handleClick={handleToShow}>{text}</Button>
+      <div className="dropdown__list">
+        {show
+          ? list.map((i) => (
+              <Button
+                key={i}
+                handleClick={() => {
+                  handleToShow();
+                  return handleSelected(i);
+                }}
+              >
+                {i}
+              </Button>
+            ))
+          : null}
+      </div>
     </div>
   );
 };
