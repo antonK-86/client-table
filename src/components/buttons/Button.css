@@ -1,0 +1,38 @@
+.btn-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 142px;
+    height: 38px;
+    margin-bottom: 1px;
+    color: #212529;
+    background-color: rgba(0,0,0,.05);
+    border-color: #f8f9fa;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/*дополнительный класс для установки ширины кнопки*/
+.w42{
+    width: 42px;
+}
+
+.btn-component:focus, .btn-component:active {
+    box-shadow: 0 0 0 0.2rem rgb(216 217 219 / 50%);
+}
+
+.btn-component:hover {
+    color: #212529;
+    background-color: #e2e6ea;
+}

@@ -1,17 +1,26 @@
 .filter-container {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    background-color: cornsilk;
 }
 
 .filter-container__item{
     display: flex;
-    justify-content: space-around;
+    justify-content: start
 }
 
-.filter-container__item_btn{
-   width: 100%;
-   margin-top: 5px;
-   padding-left: 40px;
+.filter-input{
+    margin-left: 20px;
+}
+
+.dropdown-block{
+    padding: 5px 10px;
+    position: relative;
+}
+  
+.filter-container__dropdown-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:5px;
+    left:55px
 }
