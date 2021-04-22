@@ -1,15 +1,21 @@
 .filter-container {
   display: flex;
   flex-direction: column;
+  background-color: rgb(240, 239, 239);
+  padding: 2px 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .filter-container__item {
   display: flex;
   justify-content: flex-start;
+  margin-top: 3px;
 }
 
 .filter-input {
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .dropdown-block {
@@ -28,6 +34,21 @@
 .filter-container__item_selected {
   margin-right: 10px;
   background-color: rgba(34, 18, 18, 0.192);
-  padding: 5px 10px;
+  padding: 1px 3px; 
   border-radius: 0.25rem;
+  height: 20px;
+  line-height: 1;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  position: relative;
+}
+
+.filter-container__item_clear{
+position: absolute;
+right: 0;
 }

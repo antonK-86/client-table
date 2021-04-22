@@ -1,8 +1,8 @@
 import React from 'react';
 import './Input.css';
 
-const Input = ({id,label='', type='text', className=''}) => {
-
+const Input = ({id,label='', type='text', className='', onChange, value}) => {
+  
   return (
     <div className="inputWrapper">
       <div className="labelsWrapper">
@@ -15,6 +15,8 @@ const Input = ({id,label='', type='text', className=''}) => {
         name={id}
         id={id}
         className={className}
+        onChange={onChange}
+        value={value}
       />
     </div>
   );
