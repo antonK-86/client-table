@@ -80,7 +80,6 @@ const TableContainer = ({ data }) => {
   const [valueFilter, setValueFilter] = useState("");
   const [isFiltration, setIsFiltration] = useState(false);
 
-  console.log(isFiltration);
   let dataTable = [];
   if (!isFiltration) {
     dataTable = data;
@@ -88,7 +87,7 @@ const TableContainer = ({ data }) => {
     dataTable = filteredTable(data, valueFilter, selectColumn, selectСondition);
 
   const allItemsCount = dataTable.length; //общее кол-во элементов
-  const onPageItemsCount = 10; //кол-во элементов на странице
+  const onPageItemsCount = 3; //кол-во элементов на странице
   const pagesCount = Math.ceil(allItemsCount / onPageItemsCount); //общее кол-во страниц
   const start = activePage - 1;
 
