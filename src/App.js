@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
-//import { data } from "./dblocal/db";
+import { data } from "./dblocal/db";
 import TableContainer from "./components/table/TableContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { getData } from "./http/query";
+//import { getData } from "./http/query";
 
 function App() {
+  //Данные забирнаются локально, аккаунт заблокировали на сервере MySql
 
-  const [data, setData]=useState([]);
+  // const [data, setData]=useState([]);
 
-  useEffect(()=>{
-    getData().then(res=> setData(res))
-  },[])
+  // useEffect(()=>{
+  //   getData().then(res=> setData(res))
+  // },[])
 
-  if(!data) return <p>Loading...</p>
-  
+  // if(!data) return <p>Loading...</p>
+
   return <TableContainer data={data} />;
 }
 
